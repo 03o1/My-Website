@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Earning with Anas</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
+body{background:#0f172a;color:#fff;overflow-x:hidden;}
+header{position:fixed;width:100%;background:#111;padding:15px 50px;display:flex;justify-content:space-between;align-items:center;z-index:1000;}
+header h1{color:#22c55e;letter-spacing:1px;}
+nav a{color:#fff;margin-left:20px;text-decoration:none;font-weight:bold;transition:0.3s;}
+nav a:hover{color:#22c55e;}
+section{min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:120px 20px;transition:all 0.8s ease;}
+.hero{background:linear-gradient(135deg,#065f46,#22c55e);color:#fff;text-align:center;width:100%;padding:80px 20px;clip-path:polygon(0 0,100% 0,100% 85%,0 100%);}
+.hero h2{font-size:3em;margin-bottom:15px;}
+.hero p{font-size:1.2em;margin-bottom:25px;}
+.btn{margin-top:20px;padding:12px 25px;border:none;background:#22c55e;color:#000;cursor:pointer;transition:0.3s;border-radius:10px;font-weight:bold;box-shadow:0 5px 15px rgba(0,0,0,0.3);}
+.btn:hover{transform:scale(1.05);box-shadow:0 8px 20px rgba(0,0,0,0.5);} 
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;}
+.card{background:#1e293b;padding:25px;border-radius:20px;text-align:center;box-shadow:0 5px 20px rgba(0,0,0,0.5);transition:0.5s;cursor:pointer;position:relative;overflow:hidden;}
+.card:hover{transform:translateY(-10px) scale(1.03);box-shadow:0 0 40px rgba(34,197,94,0.7);}
+.card::before{content:'';position:absolute;top:0;left:-75%;width:50%;height:100%;background:rgba(34,197,94,0.2);transform:skewX(-25deg);transition:0.5s;}
+.card:hover::before{left:150%;}
+input{padding:12px;width:280px;border:1px solid #333;border-radius:8px;margin-bottom:15px;background:#0f172a;color:#fff;}
+.dashboard{background:#111827;padding:25px;border-radius:20px;width:90%;max-width:750px;color:#fff;box-shadow:0 5px 20px rgba(0,0,0,0.5);}
+.dashboard li{padding:8px 0;border-bottom:1px solid #333;color:#fff;}
+footer{background:#111;text-align:center;padding:25px;color:#fff;box-shadow:0 -3px 10px rgba(0,0,0,0.3);}
+.about-card{background:linear-gradient(135deg,#22c55e,#065f46);padding:35px;border-radius:25px;width:320px;text-align:center;box-shadow:0 0 40px rgba(34,197,94,0.6);animation:float 3s ease-in-out infinite;color:#000;}
+.animatedText { border-right: 0.08em solid #22c55e; padding-right: 2px; transition: all 0.3s ease; display:block; font-size:1.1em; }
+.animatedText:hover { color: #22c55e; text-shadow: 2px 2px 10px rgba(34,197,94,0.7); }
+.feature-box{display:none;margin-top:15px;padding:20px;background:#0f172a;border-left:5px solid #22c55e;border-radius:10px;box-shadow:0 0 20px rgba(0,0,0,0.5);}
+#seo{background:linear-gradient(to right,#065f46,#0f172a);padding:80px 20px;border-radius:25px;width:90%;max-width:1200px;margin:50px 0;display:flex;flex-direction:column;align-items:flex-start;}
+#seo h2{color:#fff;margin-bottom:30px;}
+#seo .card{background:#0f172a;color:#fff;}
+#marketing{background:linear-gradient(to right,#fff,#0f172a);padding:80px 20px;border-radius:25px;width:90%;max-width:1200px;margin:50px 0;display:flex;flex-direction:column;align-items:flex-start;}
+#marketing h2{color:#fff;margin-bottom:30px;}
+#marketing .card{background:#0f172a;color:#fff;}
+#join{background:linear-gradient(to right,#fff,#0f172a);color:#000;padding:80px 20px;border-radius:25px;width:90%;max-width:1200px;margin:50px 0;box-shadow:0 8px 30px rgba(0,0,0,0.2);display:flex;flex-direction:column;align-items:flex-start;}
+#join input{background:#f3f4f6;color:#000;border:1px solid #ccc;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Digital Earning with Anas</h1>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#methods">Earning</a>
+    <a href="#seo">SEO</a>
+    <a href="#marketing">Marketing</a>
+    <a href="#about">About Me</a>
+    <a href="#join">Join</a>
+    <a href="#dashboard">Admin</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <h2>Start Digital Earning Today</h2>
+  <p>Learn Freelancing, SEO & Digital Marketing with Advanced Methods</p>
+  <button class="btn" onclick="scrollToSection('methods')">Explore Methods</button>
+</section>
+
+<section id="methods">
+  <h2>💰 Online Earning Methods</h2>
+  <div class="features">
+    <div class="card" onclick="toggleFeature(this, 'Freelancing')">Freelancing (Fiverr / Upwork)</div>
+    <div class="card" onclick="toggleFeature(this, 'Blogging')">Blogging & Adsense</div>
+    <div class="card" onclick="toggleFeature(this, 'Affiliate')">Affiliate Marketing</div>
+    <div class="card" onclick="toggleFeature(this, 'YouTube')">YouTube Automation</div>
+  </div>
+</section>
+
+<section id="seo">
+  <h2>🔍 SEO (Search Engine Optimization)</h2>
+  <div class="features">
+    <div class="card" onclick="toggleFeature(this, 'Keyword Research')">Keyword Research (LSI + Intent)</div>
+    <div class="card" onclick="toggleFeature(this, 'On Page SEO')">On Page SEO Optimization</div>
+    <div class="card" onclick="toggleFeature(this, 'Technical SEO')">Technical SEO (Speed, Sitemap)</div>
+    <div class="card" onclick="toggleFeature(this, 'Backlinks')">Backlinks & Authority Building</div>
+  </div>
+</section>
+
+<section id="marketing">
+  <h2>📈 Digital Marketing</h2>
+  <div class="features">
+    <div class="card" onclick="toggleFeature(this, 'Social Media')">Social Media Marketing</div>
+    <div class="card" onclick="toggleFeature(this, 'Content Marketing')">Content Marketing Strategy</div>
+    <div class="card" onclick="toggleFeature(this, 'Email Marketing')">Email Marketing System</div>
+    <div class="card" onclick="toggleFeature(this, 'Paid Ads')">Paid Ads (Google / Facebook)</div>
+  </div>
+  <div style="margin-top:20px;text-align:center;">
+    <input type="text" id="emailMarketing" placeholder="Enter email for updates">
+    <button class="btn" onclick="subscribeEmail()">Subscribe</button>
+    <p id="subscribeMessage" style="margin-top:10px;color:#065f46;font-weight:bold;"></p>
+  </div>
+</section>
+
+<section id="about">
+  <h2>👤 About Me</h2>
+  <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:30px;">
+    <div class="about-card">
+      <h3>Muhammad Anas Amjad</h3>
+      <p>SEO & Digital Marketing Expert | GitHub Chrome Extension Developer</p>
+    </div>
+    <div style="max-width:450px;position:relative;">
+      <p>🚀 <span id="line1" class="animatedText"></span></p>
+      <p>💻 <span id="line2" class="animatedText"></span></p>
+      <p>📈 <span id="line3" class="animatedText"></span></p>
+    </div>
+  </div>
+  <div style="position:absolute;width:400px;height:400px;background:#22c55e;filter:blur(150px);top:-70px;right:-70px;opacity:0.25;"></div>
+</section>
+
+<section id="join">
+  <h2>📩 Join & Start Earning</h2>
+  <input type="text" id="name" placeholder="Your Name"><br>
+  <input type="email" id="email" placeholder="Your Email"><br>
+  <button class="btn" onclick="joinUser()">Join Now</button>
+</section>
+
+<section id="dashboard">
+  <h2>📊 Admin Dashboard</h2>
+  <div class="dashboard">
+    <h3>Joined Users</h3>
+    <ul id="userList"></ul>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Digital Earning with Anas</p>
+</footer>
+
+<script>
+function scrollToSection(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+function joinUser(){let name=document.getElementById('name').value;let email=document.getElementById('email').value;if(!name||!email){alert('Enter details');return;}let users=JSON.parse(localStorage.getItem('users'))||[];users.push({name,email});localStorage.setItem('users',JSON.stringify(users));alert('Joined Successfully!');displayUsers();}
+function subscribeEmail(){let email=document.getElementById('emailMarketing').value;if(!email){document.getElementById('subscribeMessage').innerText='Please enter a valid email!';return;}let emails=JSON.parse(localStorage.getItem('emailSubscribers'))||[];emails.push(email);localStorage.setItem('emailSubscribers',JSON.stringify(emails));document.getElementById('subscribeMessage').innerText='Subscribed Successfully!';document.getElementById('emailMarketing').value='';}
+function displayUsers(){let users=JSON.parse(localStorage.getItem('users'))||[];let list='';if(users.length===0){list='<li>No users yet</li>';}else{users.forEach(u=>{list+=`<li>${u.name} - ${u.email}</li>`});}document.getElementById('userList').innerHTML=list;}
+const featureDetails={'Freelancing':'Learn how to earn via Fiverr & Upwork with step-by-step guidance.','Blogging':'Start a blog, optimize content, and earn via ads & affiliate links.','Affiliate':'Promote products & earn commissions with affiliate marketing.','YouTube':'Automate content creation and monetize your channel effectively.','Keyword Research':'Identify high-value keywords for better SEO results.','On Page SEO':'Optimize your website content, meta tags, and structure.','Technical SEO':'Improve speed, mobile-friendliness & site health.','Backlinks':'Build authority via high-quality backlinks.','Social Media':'Grow brand presence & engagement on social platforms.','Content Marketing':'Plan and execute content strategy to attract audience.','Email Marketing':'Build mailing lists, automate campaigns, and track results.','Paid Ads':'Run effective campaigns on Google & Facebook.'};
+function toggleFeature(element, feature){let existingBox=element.querySelector('.feature-box');if(existingBox){existingBox.style.display=existingBox.style.display==='block'?'none':'block';}else{let box=document.createElement('div');box.className='feature-box';box.innerHTML=`<h3>${feature}</h3><p>${featureDetails[feature]}</p>`;element.appendChild(box);box.style.display='block';}}
+const lines=["I help people grow online with SEO and Digital Marketing.","Chrome Extension Developer on GitHub.","Focused on Freelancing, Automation & Online Earning Systems."];
+lines.forEach((text,index)=>{let i=0;const el=document.getElementById('line'+(index+1));function type(){if(i<text.length){el.innerHTML+=text.charAt(i);i++;setTimeout(type,60);}}type();});
+window.onload=displayUsers;
+</script>
+</body>
+</html>
